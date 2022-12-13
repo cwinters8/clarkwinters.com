@@ -46,12 +46,17 @@ main > img {
 }
 
 .icons {
-  margin: 1rem auto;
-  max-width: max-content;
+  /* margin: 1rem auto; */
+  /* max-width: max-content; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-between;
 }
 
 .icons i {
-  margin: 0 5px;
+  margin: 10px;
   transition: color 1s;
 }
 
@@ -129,7 +134,17 @@ nav a:hover {
 }
 
 @media only screen and (max-width: 720px) {
+  html {
+    font-size: min(16px, 3vw);
+  }
   .fa-2xl {
-    font-size: 1.4em;
+    font-size: 1.5rem;
+  }
+  .icons .tooltip {
+    border-width: 1px;
+  }
+  .icons .tooltip::after {
+    border-width: 4px;
+    bottom: 90%;
   }
 }
