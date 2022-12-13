@@ -2,7 +2,8 @@
   font-family: "Fira_Mono";
   font-style: normal;
   font-weight: 400;
-  src: url(./assets/fonts/FiraMono-Regular.ttf) format(opentype);
+  src: url(./assets/fonts/FiraMono-Regular.ttf) format(opentype),
+    url(./assets/fonts/FiraMono-Regular.woff2) format(woff2);
 }
 
 @font-face {
@@ -20,7 +21,8 @@
 }
 
 :root {
-  --font: Fira_Mono var(--sans-font);
+  --sans-font: "Avenir Next", Avenir, "Nimbus Sans L", Roboto, "Noto Sans",
+    "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
   --hover-color: #00bfff;
 }
 
@@ -32,8 +34,6 @@ body {
 main {
   margin: auto 0;
   padding: 1.5rem 0;
-  font-family: var(--font);
-  font-weight: 400;
 }
 
 main > img {
