@@ -38,7 +38,7 @@ main {
 
 main > img {
   display: block;
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 
 .attribution {
@@ -50,12 +50,12 @@ main > img {
   max-width: max-content;
 }
 
-.icons > i {
+.icons i {
   margin: 0 5px;
   transition: color 1s;
 }
 
-.icons > i:hover {
+.icons i:hover {
   color: var(--hover-color);
 }
 
@@ -68,11 +68,12 @@ main > nav {
   padding: 1rem 0;
 }
 
-.icons > i {
+.icons > div {
   position: relative;
+  display: inline-block;
 }
 
-.icons > i > span {
+.icons .tooltip {
   visibility: hidden;
   position: absolute;
   z-index: 1;
@@ -82,22 +83,34 @@ main > nav {
   border: 3px solid var(--border);
   border-radius: 6px;
   text-align: center;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
   font-weight: normal;
-  font-size: 0.5em;
+  font-size: 1em;
   line-height: normal;
   font-family: var(--font);
-  transition: opacity 1s;
+  transition: opacity 2s;
   opacity: 0;
-}
-
-.icons > i > span::after {
-  position: absolute;
-  bottom: 100%;
+  /* left: -45%;
+  top: 150%; */
+  top: 200%;
   left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 0.25rem;
 }
 
-.icons > i:hover > span {
+.icons .tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 8px;
+  border-color: transparent transparent var(--border) transparent;
+}
+
+.icons div:hover > span,
+.icons div:focus > span {
   visibility: visible;
   opacity: 1;
 }
