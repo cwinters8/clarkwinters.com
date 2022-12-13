@@ -56,7 +56,7 @@ main > img {
 }
 
 .icons i {
-  margin: 10px;
+  margin: 0 10px;
   transition: color 1s;
 }
 
@@ -76,6 +76,7 @@ main > nav {
 .icons > div {
   position: relative;
   display: inline-block;
+  margin: 5px 0;
 }
 
 .icons .tooltip {
