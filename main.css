@@ -35,7 +35,7 @@ main > img {
 
 .icons i {
   margin: 0 10px;
-  transition: color 1s;
+  transition: color 800ms;
 }
 
 .icons i:hover {
@@ -72,7 +72,7 @@ main > nav {
   font-size: 1em;
   line-height: normal;
   font-family: var(--font);
-  transition: opacity 2s;
+  transition: opacity 1s;
   opacity: 0;
   /* left: -45%;
   top: 150%; */
