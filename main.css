@@ -9,6 +9,11 @@ body {
   height: 100vh;
 }
 
+body > footer {
+  margin: 0;
+  padding: 1.5rem 1rem;
+}
+
 main {
   margin: auto 0;
   padding: 1.5rem 0;
