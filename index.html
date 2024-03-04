@@ -111,6 +111,15 @@
       </a>
     </nav>
   </main>
+  <footer>
+    <p>&#169; <span id="year"></span> Orion's Belt LLC</p>
+  </footer>
 </body>
 
 </html>
+
+<script>
+  const yearElement = document.getElementById("year")
+  const thisYear = new Date().getFullYear()
+  yearElement.innerText = thisYear
+</script>
