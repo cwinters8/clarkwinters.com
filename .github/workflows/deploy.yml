@@ -1,5 +1,12 @@
 name: Deploy site
-on: push
+on:
+  push:
+    paths:
+      - "**/*.html"
+      - "**/*.css"
+      - "assets/**"
+      - "vendor/**"
+      - ".github/workflows/deploy.yml"
 permissions:
   contents: read
   pages: write
