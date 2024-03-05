@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: cwinters8/projects/.github/actions/caller@v0
+      - uses: cwinters8/projects/caller@main
