@@ -1,0 +1,7 @@
+name: Test custom actions in projects repo
+on: [workflow_dispatch]
+jobs:
+  action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: cwinters8/projects/.github/actions/caller@main
