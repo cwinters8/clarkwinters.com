@@ -4,4 +4,4 @@ jobs:
   action:
     runs-on: ubuntu-latest
     steps:
-      - uses: cwinters8/projects/.github/actions/caller@main
+      - uses: cwinters8/projects/.github/actions/caller@v0
