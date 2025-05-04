@@ -6,6 +6,7 @@ on:
       - "**/*.css"
       - "**/*.ts"
       - "package*.json"
+      - "tsconfig.json"
       - "assets/**"
       - "vendor/**"
       - ".github/workflows/deploy.yml"
