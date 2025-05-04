@@ -4,6 +4,8 @@ on:
     paths:
       - "**/*.html"
       - "**/*.css"
+      - "**/*.ts"
+      - "package*.json"
       - "assets/**"
       - "vendor/**"
       - ".github/workflows/deploy.yml"
@@ -16,18 +18,22 @@ concurrency:
   cancel-in-progress: true
 jobs:
   deploy:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - name: copy static files to output dir
-        run: mkdir -p output && cp -R index.html main.css assets vendor output/
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: "npm"
+      - name: Install and build
+        run: npm ci && npm run build
       - name: Setup gh pages
         uses: actions/configure-pages@v2
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v1
         with:
-          path: output/
+          path: dist/
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
