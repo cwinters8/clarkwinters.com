@@ -28,7 +28,7 @@ jobs:
           node-version: lts/*
           cache: "npm"
       - name: Install and build
-        run: npm ci && npm run build
+        run: npm ci --include=dev && npm run build
         env:
           NODE_ENV: production
           VITE_CLOUDFLARE_TOKEN: "${{ secrets.CLOUDFLARE_TOKEN }}"
