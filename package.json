@@ -1,0 +1,23 @@
+{
+  "name": "clarkwinters.com",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwinters8/clarkwinters.com.git"
+  },
+  "author": "Clark Winters",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/cwinters8/clarkwinters.com/issues"
+  },
+  "homepage": "https://github.com/cwinters8/clarkwinters.com#readme",
+  "devDependencies": {
+    "typescript": "~5.7.2",
+    "vite": "^6.3.4"
+  }
+}
