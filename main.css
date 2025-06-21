@@ -2,6 +2,13 @@
   --sans-font: "Avenir Next", Avenir, "Nimbus Sans L", Roboto, "Noto Sans",
     "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
   --hover-color: #00bfff;
+  --icon-color: initial;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --icon-color: #ffffff;
+  }
 }
 
 body {
@@ -28,6 +35,17 @@ main > img {
   font-size: 0.25rem;
 }
 
+/* TODO: fix this */
+.links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-between;
+  align-items: center;
+  margin: 1rem auto;
+}
+
 .icons {
   /* margin: 1rem auto; */
   /* max-width: max-content; */
@@ -36,6 +54,7 @@ main > img {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-content: space-between;
+  align-items: center;
 }
 
 .icons i {
@@ -45,6 +64,22 @@ main > img {
 
 .icons i:hover {
   color: var(--hover-color);
+}
+
+.svg-icon {
+  width: 2.25em;
+  height: 2.25em;
+  vertical-align: middle;
+  margin: 0 10px;
+  transition: opacity 800ms;
+}
+
+.svg-icon:hover {
+  opacity: 0.7;
+}
+
+.icons a {
+  color: var(--icon-color);
 }
 
 main > nav {
@@ -98,10 +133,14 @@ main > nav {
   border-color: transparent transparent var(--border) transparent;
 }
 
-.icons div:hover > span,
-.icons div:focus > span {
+.icons div:hover span.tooltip,
+.icons div:focus span.tooltip {
   visibility: visible;
   opacity: 1;
+}
+
+.fa-discord {
+  color: #7289da;
 }
 
 h1 {
