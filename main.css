@@ -12,6 +12,10 @@ header.nav {
   padding: 1rem 2rem;
 }
 
+.header-logo {
+  height: 4rem;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --icon-color: #ffffff;
@@ -165,7 +169,49 @@ nav a:hover {
   color: var(--hover-color);
 }
 
+.intro-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.headshot {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: url("./assets/images/clark.png");
+  background-size: cover;
+  background-position: center 10%;
+  flex-shrink: 0;
+  border: 2px solid #00ff88;
+}
+
+.intro-text h1,
+.intro-text h2,
+.intro-text p {
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.intro-text h1 {
+  margin-bottom: 1rem;
+}
+
 @media only screen and (max-width: 720px) {
+  .intro-section {
+    flex-direction: column;
+  }
+
+  .intro-text h1,
+  .intro-text h2,
+  .intro-text p {
+    text-align: center;
+  }
+
   html {
     font-size: min(16px, 3vw);
   }
