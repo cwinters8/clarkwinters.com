@@ -5,6 +5,13 @@
   --icon-color: initial;
 }
 
+header.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --icon-color: #ffffff;
@@ -35,7 +42,6 @@ main > img {
   font-size: 0.25rem;
 }
 
-/* TODO: fix this */
 .links {
   display: flex;
   flex-direction: row;
@@ -43,12 +49,10 @@ main > img {
   justify-content: space-evenly;
   align-content: space-between;
   align-items: center;
-  margin: 1rem auto;
+  gap: 1.5rem;
 }
 
 .icons {
-  /* margin: 1rem auto; */
-  /* max-width: max-content; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
