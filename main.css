@@ -54,7 +54,7 @@ main > img {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-content: space-between;
-  align-items: center;
+  align-items: end;
   gap: 1.5rem;
 }
 
@@ -83,12 +83,13 @@ main > img {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-content: space-between;
-  align-items: center;
+  align-items: end;
 }
 
 .icons i {
   margin: 0 10px;
   transition: color 800ms;
+  font-size: 2.25rem;
 }
 
 .icons i:hover {
@@ -98,9 +99,11 @@ main > img {
 .svg-icon {
   width: 2.25em;
   height: 2.25em;
-  vertical-align: middle;
+  vertical-align: bottom;
   margin: 0 10px;
   transition: opacity 800ms;
+  position: relative;
+  top: 5px;
 }
 
 .svg-icon:hover {
@@ -123,7 +126,6 @@ main > nav {
 .icons > div {
   position: relative;
   display: inline-block;
-  margin: 5px 0;
 }
 
 .icons .tooltip {
