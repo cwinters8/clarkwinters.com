@@ -3,6 +3,7 @@
     "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
   --hover-color: #00bfff;
   --icon-color: initial;
+  --lime-green: #00ff88;
 }
 
 header.nav {
@@ -54,6 +55,25 @@ main > img {
   align-content: space-between;
   align-items: center;
   gap: 1.5rem;
+}
+
+.links a {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--lime-green);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  width: 7rem;
+  text-align: center;
+}
+
+.links a:hover {
+  background-color: var(--lime-green);
+  color: #1a1a1a;
 }
 
 .icons {
@@ -186,7 +206,7 @@ nav a:hover {
   background-size: cover;
   background-position: center 10%;
   flex-shrink: 0;
-  border: 2px solid #00ff88;
+  border: 2px solid var(--lime-green);
 }
 
 .intro-text h1,
