@@ -15,6 +15,7 @@ header.nav {
 
 .header-logo {
   height: 4rem;
+  order: -1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -51,7 +52,7 @@ main > img {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-content: space-between;
   align-items: center;
   gap: 1.5rem;
@@ -222,6 +223,20 @@ nav a:hover {
 }
 
 @media only screen and (max-width: 720px) {
+  header.nav {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .header-logo {
+    order: 0;
+  }
+
+  .links {
+    flex-direction: row;
+    justify-content: center;
+  }
+
   .intro-section {
     flex-direction: column;
   }
