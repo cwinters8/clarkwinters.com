@@ -93,7 +93,7 @@ main > img {
 }
 
 .icons i:hover {
-  color: var(--hover-color);
+  color: var(--lime-green);
 }
 
 .svg-icon {
@@ -168,10 +168,6 @@ main > nav {
 .icons div:focus span.tooltip {
   visibility: visible;
   opacity: 1;
-}
-
-.fa-discord {
-  color: #7289da;
 }
 
 h1 {
