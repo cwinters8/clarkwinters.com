@@ -1,6 +1,16 @@
 name: Deploy site
 # Deploy only from main. A push to any other branch must never publish the site.
+#
+# Three layers, because the trigger filter alone only binds branches that carry
+# this version of the file (GitHub runs the workflow from the pushed commit):
+#   1. the trigger below only fires for main
+#   2. the job is skipped unless the ref is main
+#   3. the job deploys through the github-pages environment, whose deployment
+#      branch policy (repo settings) allows main only
 on:
+  # Manual re-run for a failed deploy. From any ref other than main the job is
+  # skipped by its `if`, and the environment policy rejects it as well.
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -24,11 +34,18 @@ jobs:
   deploy:
     # Second guard, in case a trigger is added later without a branch filter.
     if: github.ref == 'refs/heads/main'
+    # Third guard: makes the environment's main-only branch policy apply to
+    # this job. Without `environment:` the policy does not bind it.
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-24.04
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
         with:
           node-version: lts/*
           cache: "npm"
@@ -38,11 +55,11 @@ jobs:
           NODE_ENV: production
           VITE_CLOUDFLARE_TOKEN: "${{ secrets.CLOUDFLARE_TOKEN }}"
       - name: Setup gh pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Upload artifacts
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist/
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

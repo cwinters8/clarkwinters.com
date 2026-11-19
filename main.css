@@ -100,7 +100,9 @@ main > img {
 
 .icons i:hover,
 .icons a:focus-visible i {
-  color: var(--lime-green);
+  /* dark green on the light header, lime on the dark one: lime alone is
+     1.25:1 against the light header */
+  color: var(--resume-color);
 }
 
 .svg-icon {
