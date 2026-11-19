@@ -4,7 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clark Winters</title>
+    <title>Clark Winters | Site Reliability Engineer</title>
+    <meta
+      name="description"
+      content="Clark Winters is a Senior Site Reliability Engineer at CARFAX who builds delivery pipelines, observability infrastructure, and tooling for AI coding agents."
+    />
+    <meta
+      property="og:title"
+      content="Clark Winters | Site Reliability Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Clark Winters is a Senior Site Reliability Engineer at CARFAX who builds delivery pipelines, observability infrastructure, and tooling for AI coding agents."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://clarkwinters.com" />
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./vendor/simple.css/2.1.1/simple.min.css" />
     <link
@@ -32,113 +46,166 @@
           src="./assets/images/gopher_working_cropped.png"
           alt="Gopher Clark logo"
           class="header-logo"
+          width="246"
+          height="231"
         />
       </div>
-      <div class="icons" aria-label="social links">
+      <div class="icons" role="group" aria-label="Social links">
         <div>
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://github.com/cwinters8"
             aria-label="View GitHub profile"
           >
-            <i
-              aria-hidden="true"
-              class="fa-brands fa-2xl fa-github"
-              tabindex="1"
-            ></i>
+            <i aria-hidden="true" class="fa-brands fa-2xl fa-github"></i>
           </a>
         </div>
-
         <div>
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://www.linkedin.com/in/clarkwinters/"
             aria-label="View LinkedIn profile"
           >
-            <i
-              aria-hidden="true"
-              class="fa-brands fa-2xl fa-linkedin"
-              tabindex="5"
-            ></i>
+            <i aria-hidden="true" class="fa-brands fa-2xl fa-linkedin"></i>
+          </a>
+        </div>
+        <div>
+          <a href="mailto:ai@clarkwinters.com" aria-label="Send me an email">
+            <i aria-hidden="true" class="fa-solid fa-2xl fa-envelope"></i>
           </a>
         </div>
         <div>
           <a
             target="_blank"
-            href="mailto:devops@clarkwinters.com"
-            aria-label="Send me an email"
-          >
-            <i
-              aria-hidden="true"
-              class="fa-solid fa-2xl fa-envelope"
-              tabindex="5"
-            ></i>
-          </a>
-        </div>
-        <div>
-          <a
-            target="_blank"
+            rel="noopener noreferrer"
             href="https://discord.com/users/365172992545652738"
             aria-label="Find me on Discord"
           >
-            <i
-              aria-hidden="true"
-              class="fa-brands fa-2xl fa-discord"
-              tabindex="5"
-            ></i>
+            <i aria-hidden="true" class="fa-brands fa-2xl fa-discord"></i>
           </a>
         </div>
       </div>
     </header>
     <main>
       <div class="intro-section">
-        <div
+        <img
           class="headshot"
-          role="img"
-          aria-label="Clark Winters"
-          title="Clark Winters"
-        ></div>
+          src="./assets/images/clark-640.webp"
+          alt="Clark Winters"
+          width="200"
+          height="200"
+        />
         <div class="intro-text">
           <h1>Clark Winters</h1>
-          <h2>DevOps & Site Reliability Engineer</h2>
+          <p class="title">Senior Site Reliability Engineer</p>
           <p>
-            I help software teams deploy faster, scale smarter, and sleep better
-            at night.
+            I build the path to production: delivery pipelines, observability
+            infrastructure, and systems that AI agents can operate safely.
           </p>
         </div>
       </div>
-      <p>
-        Over the past decade, I've transformed how development teams ship
-        software — turning two-day deployments into sub-hour releases, cutting
-        infrastructure costs by 30%, and maintaining 99.9% uptime even during
-        rapid growth.
-      </p>
-      <p>
-        My approach is straightforward: identify what's actually broken, fix it
-        with the right tools, and build systems that work reliably without
-        constant babysitting. Whether you're wrestling with AWS complexity,
-        drowning in manual deployments, or watching your infrastructure costs
-        spiral out of control, I've likely solved similar problems before.
-      </p>
-      <p>
-        I specialize in AWS infrastructure, Kubernetes, Terraform, and GitHub
-        Actions — but the tools matter less than the outcomes. My goal is always
-        the same: make your systems more reliable, your deployments safer, and
-        your team more productive.
-      </p>
-      <h3>Ready to fix what's keeping you up at night?</h3>
-      <p>
-        If you're looking for an SRE or DevOps Engineer who can solve real
-        problems and deliver measurable results, let's talk.
-      </p>
-      <p>
-        Email me at
-        <a href="mailto:devops@clarkwinters.com">devops@clarkwinters.com</a> to
-        discuss how I can help your team.
-      </p>
+
+      <section aria-labelledby="now-heading">
+        <h2 id="now-heading">Now</h2>
+        <p>
+          I'm a Senior Site Reliability Engineer at CARFAX, where I lead the
+          buildout of the company's OpenTelemetry pipeline platform on Google
+          Cloud. Outside work, I'm building delivery tooling for AI coding
+          agents: portable review skills and a control plane that moves a
+          change from issue to production.
+        </p>
+      </section>
+
+      <section aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Projects</h2>
+        <article class="project">
+          <div class="project-head">
+            <h3>
+              <a href="https://github.com/cwinters8/agent-skills"
+                >agent-skills</a
+              >
+            </h3>
+            <span class="tag">Open source</span>
+          </div>
+          <p>
+            13 portable Claude Code skills for PR preflight, code review,
+            security review and dependency hygiene, plus a CLI that vendors
+            them into a repo under a hash-locked manifest and flags drift in
+            CI. Reviews run in a fresh session, so the author is never the
+            reviewer.
+          </p>
+        </article>
+        <article class="project">
+          <div class="project-head">
+            <h3>chuck</h3>
+            <span class="tag">In progress</span>
+          </div>
+          <p>
+            A Go control plane that moves GitHub issues through build, review,
+            merge, validation and production promotion. Each stage runs as a
+            fresh Claude Code worker on an ephemeral machine. Agents report and
+            code decides: workers never hold merge rights or model credentials.
+          </p>
+        </article>
+        <article class="project">
+          <div class="project-head">
+            <h3>
+              <a href="https://github.com/cwinters8/gomap">gomap</a>
+            </h3>
+            <span class="tag">Open source</span>
+          </div>
+          <p>A Go module for talking to JMAP mail servers.</p>
+        </article>
+      </section>
+
+      <section aria-labelledby="background-heading">
+        <h2 id="background-heading">Background</h2>
+        <p>
+          I've spent more than 10 years running production systems. I started
+          as a database administrator at IBM, then at Boeing, where I was tech
+          lead for a managed Oracle service of nearly 8,000 instances. From
+          there I moved into cloud engineering at 2nd Watch, then freelance
+          DevOps work through Toptal, where I cut one client's release time
+          from two days to under an hour.
+        </p>
+      </section>
+
+      <section aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <dl class="contact-list">
+          <dt>Resume</dt>
+          <dd>
+            <a href="https://resume.clarkwinters.com"
+              >resume.clarkwinters.com</a
+            >
+          </dd>
+          <dt>GitHub</dt>
+          <dd>
+            <a href="https://github.com/cwinters8">github.com/cwinters8</a>
+          </dd>
+          <dt>LinkedIn</dt>
+          <dd>
+            <a href="https://www.linkedin.com/in/clarkwinters/"
+              >linkedin.com/in/clarkwinters</a
+            >
+          </dd>
+          <dt>Email</dt>
+          <dd>
+            <a href="mailto:ai@clarkwinters.com">ai@clarkwinters.com</a>
+          </dd>
+          <dt>Discord</dt>
+          <dd>
+            <a href="https://discord.com/users/365172992545652738"
+              >Discord profile</a
+            >
+          </dd>
+        </dl>
+      </section>
     </main>
     <footer>
-      <p>&#169; <span id="year"></span> Orion's Belt LLC</p>
+      <p>&#169; <span id="year"></span> Clark Winters</p>
     </footer>
     <script type="module" src="/src/main.ts"></script>
   </body>

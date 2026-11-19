@@ -4,6 +4,8 @@
   --hover-color: #00bfff;
   --icon-color: initial;
   --lime-green: #00ff88;
+  --resume-color: #00663a;
+  --resume-bg: rgba(0, 0, 0, 0.06);
 }
 
 header.nav {
@@ -15,12 +17,15 @@ header.nav {
 
 .header-logo {
   height: 4rem;
+  width: auto;
   order: -1;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --icon-color: #ffffff;
+    --resume-color: var(--lime-green);
+    --resume-bg: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -59,8 +64,8 @@ main > img {
 }
 
 .links a {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: var(--lime-green);
+  background-color: var(--resume-bg);
+  color: var(--resume-color);
   padding: 0.5rem 1rem;
   border-radius: 10px;
   text-decoration: none;
@@ -72,7 +77,8 @@ main > img {
   text-align: center;
 }
 
-.links a:hover {
+.links a:hover,
+.links a:focus-visible {
   background-color: var(--lime-green);
   color: #1a1a1a;
 }
@@ -92,7 +98,8 @@ main > img {
   font-size: 2.25rem;
 }
 
-.icons i:hover {
+.icons i:hover,
+.icons a:focus-visible i {
   color: var(--lime-green);
 }
 
@@ -201,15 +208,14 @@ nav a:hover {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-image: url("./assets/images/clark.png");
-  background-size: cover;
-  background-position: center 10%;
+  object-fit: cover;
+  object-position: center 10%;
   flex-shrink: 0;
   border: 2px solid var(--lime-green);
+  opacity: 1;
 }
 
 .intro-text h1,
-.intro-text h2,
 .intro-text p {
   text-align: left;
   margin-top: 0;
@@ -218,6 +224,80 @@ nav a:hover {
 
 .intro-text h1 {
   margin-bottom: 1rem;
+}
+
+.intro-text .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+main > section {
+  border: 0;
+  padding: 0;
+  margin: 2.5rem 0 0;
+}
+
+main > section > h2 {
+  margin: 0 0 0.75rem;
+}
+
+main > section > p {
+  margin: 0;
+}
+
+.project {
+  background-color: var(--accent-bg);
+  border-left: 3px solid var(--lime-green);
+  padding: 1rem 1.25rem;
+}
+
+.project:last-child {
+  margin-bottom: 0;
+}
+
+.project-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.project h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.project p {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.tag {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--text-light);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.05rem 0.6rem;
+  white-space: nowrap;
+}
+
+.contact-list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.4rem 1.5rem;
+  margin: 0;
+}
+
+.contact-list dt {
+  font-weight: bold;
+}
+
+.contact-list dd {
+  margin: 0;
+  overflow-wrap: anywhere;
 }
 
 @media only screen and (max-width: 720px) {
@@ -240,13 +320,8 @@ nav a:hover {
   }
 
   .intro-text h1,
-  .intro-text h2,
   .intro-text p {
     text-align: center;
-  }
-
-  html {
-    font-size: min(16px, 3vw);
   }
   .fa-2xl {
     font-size: 1.5rem;
