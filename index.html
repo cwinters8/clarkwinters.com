@@ -113,8 +113,9 @@
           I'm a Senior Site Reliability Engineer at CARFAX, where I lead the
           buildout of the company's OpenTelemetry pipeline platform on Google
           Cloud. Outside work, I'm building delivery tooling for AI coding
-          agents: portable review skills and a control plane that moves a
-          change from issue to production.
+          agents: portable review skills, agents that fix labeled issues in
+          CI, and a control plane that moves a change from issue to
+          production.
         </p>
       </section>
 
@@ -139,7 +140,27 @@
         </article>
         <article class="project">
           <div class="project-head">
-            <h3>chuck</h3>
+            <h3>
+              <a href="https://github.com/cwinters8/agent-ci-kit"
+                >agent-ci-kit</a
+              >
+            </h3>
+            <span class="tag">Open source</span>
+          </div>
+          <p>
+            A kit you copy into a repo so Claude Code agents fix labeled
+            GitHub issues from Actions and open draft PRs for a human to
+            review. Every agent run has turn and time caps, issue fixes have
+            a daily cap, and the fix workflow refuses to open a PR that
+            touches .github/, .claude/ or .env files.
+          </p>
+        </article>
+        <article class="project">
+          <div class="project-head">
+            <h3>
+              <a href="https://github.com/showmethebots/chuck">chuck</a>
+            </h3>
+            <span class="tag">Open source</span>
             <span class="tag">In progress</span>
           </div>
           <p>
@@ -149,15 +170,6 @@
             ephemeral machine. Agents report and code decides: by design,
             workers hold no merge rights and no model credentials.
           </p>
-        </article>
-        <article class="project">
-          <div class="project-head">
-            <h3>
-              <a href="https://github.com/cwinters8/gomap">gomap</a>
-            </h3>
-            <span class="tag">Open source</span>
-          </div>
-          <p>A Go module for talking to JMAP mail servers.</p>
         </article>
       </section>
 
