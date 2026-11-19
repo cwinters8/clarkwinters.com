@@ -148,12 +148,10 @@
           </div>
           <p>
             A kit you copy into a repo so Claude Code agents fix labeled
-            GitHub issues from Actions and open draft PRs. Its limits live in
-            the workflows rather than the prompt: shell access is an allowlist
-            read from the default branch, web tools are off, the fix workflow
-            won't open a PR that touches CI, agent config or .env files, and
-            merging is left to a human. Every run has turn and time caps, and
-            issue fixes have a daily cap.
+            GitHub issues from Actions and open draft PRs for a human to
+            review and merge. Every agent run has turn and time caps, issue
+            fixes have a daily cap, and the fix workflow refuses to open a PR
+            that touches .github/, .claude/ or .env files.
           </p>
         </article>
         <article class="project">
