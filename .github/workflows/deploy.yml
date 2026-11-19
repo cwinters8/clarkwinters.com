@@ -1,6 +1,9 @@
 name: Deploy site
+# Deploy only from main. A push to any other branch must never publish the site.
 on:
   push:
+    branches:
+      - main
     paths:
       - "**/*.html"
       - "**/*.css"
@@ -19,6 +22,8 @@ concurrency:
   cancel-in-progress: true
 jobs:
   deploy:
+    # Second guard, in case a trigger is added later without a branch filter.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     steps:
       - name: Check out repository code
