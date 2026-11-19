@@ -2,6 +2,31 @@
   --sans-font: "Avenir Next", Avenir, "Nimbus Sans L", Roboto, "Noto Sans",
     "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
   --hover-color: #00bfff;
+  --icon-color: initial;
+  --lime-green: #00ff88;
+  --resume-color: #00663a;
+  --resume-bg: rgba(0, 0, 0, 0.06);
+}
+
+header.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.header-logo {
+  height: 4rem;
+  width: auto;
+  order: -1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --icon-color: #ffffff;
+    --resume-color: var(--lime-green);
+    --resume-bg: rgba(255, 255, 255, 0.1);
+  }
 }
 
 body {
@@ -28,23 +53,74 @@ main > img {
   font-size: 0.25rem;
 }
 
+.links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: space-between;
+  align-items: end;
+  gap: 1.5rem;
+}
+
+.links a {
+  background-color: var(--resume-bg);
+  color: var(--resume-color);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  width: 7rem;
+  text-align: center;
+}
+
+.links a:hover,
+.links a:focus-visible {
+  background-color: var(--lime-green);
+  color: #1a1a1a;
+}
+
 .icons {
-  /* margin: 1rem auto; */
-  /* max-width: max-content; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-content: space-between;
+  align-items: end;
 }
 
 .icons i {
   margin: 0 10px;
   transition: color 800ms;
+  font-size: 2.25rem;
 }
 
-.icons i:hover {
-  color: var(--hover-color);
+.icons i:hover,
+.icons a:focus-visible i {
+  /* dark green on the light header, lime on the dark one: lime alone is
+     1.25:1 against the light header */
+  color: var(--resume-color);
+}
+
+.svg-icon {
+  width: 2.25em;
+  height: 2.25em;
+  vertical-align: bottom;
+  margin: 0 10px;
+  transition: opacity 800ms;
+  position: relative;
+  top: 5px;
+}
+
+.svg-icon:hover {
+  opacity: 0.7;
+}
+
+.icons a {
+  color: var(--icon-color);
 }
 
 main > nav {
@@ -59,7 +135,6 @@ main > nav {
 .icons > div {
   position: relative;
   display: inline-block;
-  margin: 5px 0;
 }
 
 .icons .tooltip {
@@ -98,8 +173,8 @@ main > nav {
   border-color: transparent transparent var(--border) transparent;
 }
 
-.icons div:hover > span,
-.icons div:focus > span {
+.icons div:hover span.tooltip,
+.icons div:focus span.tooltip {
   visibility: visible;
   opacity: 1;
 }
@@ -122,9 +197,133 @@ nav a:hover {
   color: var(--hover-color);
 }
 
+.intro-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.headshot {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 10%;
+  flex-shrink: 0;
+  border: 2px solid var(--lime-green);
+  opacity: 1;
+}
+
+.intro-text h1,
+.intro-text p {
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.intro-text h1 {
+  margin-bottom: 1rem;
+}
+
+.intro-text .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+main > section {
+  border: 0;
+  padding: 0;
+  margin: 2.5rem 0 0;
+}
+
+main > section > h2 {
+  margin: 0 0 0.75rem;
+}
+
+main > section > p {
+  margin: 0;
+}
+
+.project {
+  background-color: var(--accent-bg);
+  border-left: 3px solid var(--lime-green);
+  padding: 1rem 1.25rem;
+}
+
+.project:last-child {
+  margin-bottom: 0;
+}
+
+.project-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.project h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.project p {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.tag {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--text-light);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.05rem 0.6rem;
+  white-space: nowrap;
+}
+
+.contact-list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.4rem 1.5rem;
+  margin: 0;
+}
+
+.contact-list dt {
+  font-weight: bold;
+}
+
+.contact-list dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
 @media only screen and (max-width: 720px) {
-  html {
-    font-size: min(16px, 3vw);
+  header.nav {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .header-logo {
+    order: 0;
+  }
+
+  .links {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .intro-section {
+    flex-direction: column;
+  }
+
+  .intro-text h1,
+  .intro-text p {
+    text-align: center;
   }
   .fa-2xl {
     font-size: 1.5rem;
